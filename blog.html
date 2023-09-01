@@ -64,7 +64,7 @@
         <div class="join join-vertical w-full">
             <div class="collapse collapse-arrow join-item border border-base-300">
                 <input type="radio" name="my-accordion-4" checked="checked" />
-                <div class="collapse-title text-xl font-bold">
+                <div class="collapse-title text-2xl font-bold">
                     Discuss the scope of var, let, and const.
                 </div>
                 <div class="collapse-content">
@@ -100,17 +100,6 @@
                             before it's declared in the code, but it will have an initial value of <span
                                 class="font-bold">'undefined'</span>.
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    function example() {<br>
-                                    if (true) {<br>
-                                    var x = 10;<br>
-                                    } <br>
-                                    console.log(x); // 10, even though it's declared inside the if block <br>
-                                    }
-                                </p>
-                            </div>
                         </div>
 
                         <!-- Let-->
@@ -132,17 +121,6 @@
                             Accessing a <span class="font-bold">'let'</span> variable before its declaration results in
                             a <span class="font-bold">'ReferenceError'</span>.
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    function example() {<br>
-                                    if (true) {<br>
-                                    let y = 20;<br>
-                                    } <br>
-                                    console.log(y); // ReferenceError: y is not defined <br>
-                                    }
-                                </p>
-                            </div>
                         </div>
 
 
@@ -168,18 +146,6 @@
                             reassign the
                             variable to a different object or array.
                             <br>
-
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    const z = 30; <br>
-                                    z = 40; // TypeError: Assignment to constant variable <br>
-
-                                    const arr = [1, 2, 3]; <br>
-                                    arr.push(4); // This is allowed <br>
-                                    arr = [4, 5, 6]; // This is not allowed <br>
-                                </p>
-                            </div>
                         </div>
                         <br>
                         <p>
@@ -203,7 +169,7 @@
             </div>
             <div class="collapse collapse-arrow join-item border border-base-300">
                 <input type="radio" name="my-accordion-4" />
-                <div class="collapse-title text-xl font-bold">
+                <div class="collapse-title text-2xl font-bold">
                     Tell us the use cases of null and undefined
                 </div>
                 <div class="collapse-content">
@@ -229,25 +195,10 @@
                             <span class="font-bold">As a Placeholder:</span> <span class="font-bold">'null'</span> can
                             be used as a placeholder for an object or value that will be assigned later in your code.
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    let person = null; <br>
-                                    person = { name: 'John', age: 30 }; <br>
-                                </p>
-                            </div>
 
                             <span class="font-bold">Return Value:</span> Functions can return <span
                                 class="font-bold">'null'</span> to indicate that they didn't produce a valid result.
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    function findElement(arr, target) { <br>
-                                    for (let i = 0; i < arr.length; i++) { <br> if (arr[i]===target) { <br>return i;
-                                        <br>} <br> } <br>return null; <br>}
-                                </p>
-                            </div>
                         </div>
 
                         <!-- undefined-->
@@ -260,59 +211,23 @@
                             property when it has not been assigned any value. It's often the
                             default value for uninitialized variables.
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    let someVar; // undefined <br>
-                                    let obj = {};
-                                </p>
-                            </div>
-                            <br>
 
                             <span class="font-bold">Function Parameters:</span> If a function is called with fewer
                             arguments than it expects, the missing arguments will be <span
                                 class="font-bold">'undefined'</span>.
 
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    function greet(name) { <br>
-                                    console.log(`Hello, ${name}!`); <br>
-                                    } <br>
-
-                                    greet(); // Outputs: Hello, undefined! <br>
-                                </p>
-                            </div>
 
                             <span class="font-bold">Return Value:</span> Functions that don't explicitly return a value
                             will return <span class="font-bold">'undefined'</span>.
 
                             <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    function doSomething() { <br>
-                                    // No return statement
-                                    } <br>
-
-                                    const result = doSomething(); // result is undefined <br>
-                                </p>
-                            </div>
 
 
                             <span class="font-bold">Accessing Non-existent Properties:</span> When you try to access a
                             property that doesn't exist in an object, you'll get <span
                                 class="font-bold">'undefined'</span>.
 
-                            <br>
-                            <div>
-                                <span class="font-bold">For Example:</span>
-                                <p>
-                                    const person = { name: 'John' }; <br>
-                                    console.log(person.age); // undefined <br>
-                                </p>
-                            </div>
                         </div>
                         <br>
 
@@ -330,7 +245,7 @@
             </div>
             <div class="collapse collapse-arrow join-item border border-base-300">
                 <input type="radio" name="my-accordion-4" />
-                <div class="collapse-title text-xl font-bold">
+                <div class="collapse-title text-2xl font-bold">
                     What do you mean by REST API?
                 </div>
                 <div class="collapse-content">
@@ -410,8 +325,6 @@
 
     </main>
 
-    <!-- Script -->
-    <script src="java-script/phero-tube.js"></script>
 </body>
 
 </html>

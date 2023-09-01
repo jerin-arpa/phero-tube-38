@@ -1,10 +1,12 @@
+let data;
+
 const handleCategory = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
-    const data = await (response.json());
+    const categoryData = await (response.json());
 
 
     const tabContainer = document.getElementById('tab-container');
-    data.data.forEach((category) => {
+    categoryData.data.forEach((category) => {
         const div = document.createElement('div');
         div.innerHTML = `
         <a class="tab">
@@ -18,31 +20,35 @@ const handleCategory = async () => {
 
 const loadData = async (category_id) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category_id}`);
-    const data = await (response.json());
+    data = await (response.json());
 
+    cardView(data);
+}
+
+
+const cardView = (data) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
 
     if (data.data && data.data.length > 0) {
 
         data.data?.forEach((card) => {
-            console.log(card);
             const div = document.createElement('div');
             div.innerHTML = `
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card">
                 <figure>
-                    <img class=" max-h-44 w-full" src= ${card?.thumbnail}/>
+                    <img class="h-48 w-full rounded-xl" src= ${card?.thumbnail}/>
                 </figure>
 
                 <div class="relative flex justify-end">
                 ${card?.others?.posted_date ? `<div class="bg-black text-white font-bold w-2/4 absolute bottom-2 right-2 rounded-md"> 
                         <p class="py-2 text-center text-xs">
-                          ${card?.others?.posted_date}
+                          ${secondTOHourAndMinute(card?.others?.posted_date)}
                         </p>
                    </div>` : ''}
                 </div>
 
-                <div class="card-body">
+                <div class="card-body pl-0">
                     <div class="card-footer">
                         <div class="flex">
                             <div>
@@ -89,6 +95,20 @@ const noContent = (isAvailable) => {
         content.classList.add('hidden');
     }
 }
+
+
+const secondTOHourAndMinute = (seconds) => {
+    const hour = parseInt(seconds / 3600);
+    const remainingSeconds = seconds % 3600;
+    const minutes = parseInt(remainingSeconds / 60);
+    return (`${hour} hrs ${minutes} min ago `);
+}
+
+
+const sortByView = document.getElementById('sortByView').addEventListener('click', function () {
+    data.data.sort(function (a, b) { return parseFloat(b.others.views) - parseFloat(a.others.views); });
+    cardView(data);
+});
 
 
 handleCategory();
