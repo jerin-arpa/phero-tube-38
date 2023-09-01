@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phero Tube</title>
+    <link rel="shortcut icon" href="images/play_icon.png" type="image/x-icon">
+
+    <!-- Daisy Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<!-- tailwind custom class -->
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    clifford: '#da373d',
+                    'primary-color': '#FF1F3D',
+                }
+            }
+        }
+    }
+</script>
+
+<!-- css class -->
+<style>
+    .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+
+
+<body class="font-inter  container mx-auto px-5">
+    <header class="my-10">
+        <!-- Navbar -->
+        <div
+            class="navbar bg-base-100 flex flex-col md:flex-row lg:flex-row gap-5 md:gap-0 lg:gap-0 items-center justify-between top-28">
+            <div>
+                <div>
+                    <img class="w-full" src="images/Logo.png" alt="">
+                </div>
+            </div>
+            <div>
+                <a id="sortByView" class="btn btn-neutra normal-case text-xl">Sort by view</a>
+            </div>
+            <div>
+                <button class="btn bg-primary-color text-white">
+                    <a href="blog.html">Blog</a>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <hr class="mb-10">
+
+
+    <main class="mb-5">
+
+        <!-- Tab section -->
+        <section class="flex justify-center">
+            <div class="tabs flex flex-col md:flex-row lg:flex-row gap-5 md:gap-0 lg:gap-0 items-center"
+                id="tab-container">
+
+            </div>
+        </section>
+
+        <div id="no-content" class="py-44 hidden">
+            <div class="flex justify-center">
+                <img src="images/Icon.png" alt="">
+            </div>
+            <h1 class="text-3xl lg:text-5xl font-bold text-center">
+                Oops!! Sorry, There is <br>no content here
+            </h1>
+        </div>
+
+
+        <!-- card section -->
+        <section id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+
+        </section>
+    </main>
+
+    <!-- Script -->
+    <script src="java-script/phero-tube.js"></script>
+</body>
+
+</html>
